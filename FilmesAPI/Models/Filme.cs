@@ -4,6 +4,7 @@ namespace FilmesAPI.Models;
 
 public class Filme
 {
+    public int Id { get; set; }
     [Required(ErrorMessage = "The movie title is mandatory!")]
     public string Titulo { get; set; }
 
@@ -15,4 +16,5 @@ public class Filme
     [Required(ErrorMessage = "The movie duration is mandatory!")]
     [Range(70, 600, ErrorMessage = "The movie duration must be between 70 and 600 minutes!")]
     public int Duracao { get; set; }
+  
 }
