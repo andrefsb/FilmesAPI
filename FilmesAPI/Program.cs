@@ -1,4 +1,4 @@
-using FilmesAPI.Data;
+using FilmesApi.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace FilmesAPI
@@ -8,10 +8,12 @@ namespace FilmesAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
             var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
 
-            builder.Services.AddDbContext<FilmeContext>(opts=>
-            opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+            builder.Services.AddDbContext<FilmeContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             // Add services to the container.
 
