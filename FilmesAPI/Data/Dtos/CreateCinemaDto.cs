@@ -6,5 +6,6 @@ namespace FilmesAPI.Data.Dtos
     {
         [Required(ErrorMessage = "The field nome is mandatory.")]
         public string Nome { get; set; }
+        public int EnderecoId { get; set; }
     }
 }
