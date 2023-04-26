@@ -25,6 +25,11 @@ namespace FilmesApi.Data
                 .HasOne(sessao => sessao.Filme)
                 .WithMany(filme => filme.Sessoes)
                 .HasForeignKey(sessao => sessao.FilmeId);
+
+            builder.Entity<Endereco>()
+                .HasOne(endereco => endereco.Cinema)
+                .WithOne(cinema => cinema.Endereco)
+                .OnDelete(DeleteBehavior.Restrict);
         }
 
         public DbSet<Filme> Filmes { get; set; }
