@@ -13,8 +13,8 @@ namespace FilmesApi.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Sessao>().
-                 HasKey(sessao => new { sessao.FilmeId, sessao.CinemaId });
+            builder.Entity<Sessao>()
+             .HasKey(sessao => new { sessao.FilmeId, sessao.CinemaId });
 
             builder.Entity<Sessao>()
             .HasOne(sessao => sessao.Cinema)
